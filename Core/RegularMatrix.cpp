@@ -61,14 +61,14 @@ size_t RegularMatrix<V, TA>::Columns() const
 // Modifiers
 // Operators
 template <class V, class TA>
-ArrayStructure<V>& RegularMatrix<V, TA>::operator[] (size_t row)
+ArrayStorage<V>& RegularMatrix<V, TA>::operator[] (size_t row)
 { // Subscripting operator
 
 	return m_structure[row];
 }
 
 template <class V, class TA>
-const ArrayStructure<V>& RegularMatrix<V, TA>::operator[] (size_t row) const
+const ArrayStorage<V>& RegularMatrix<V, TA>::operator[] (size_t row) const
 { // Subscripting operator
 
 	return m_structure[row];
