@@ -6,7 +6,7 @@
 // The array structure to use is given as template argument.
 
 #ifndef Array_cpp
-#define Array_cpp
+#define Array_cpp 
 
 #include "Array.h"
 

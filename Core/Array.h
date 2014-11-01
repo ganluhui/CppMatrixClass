@@ -6,7 +6,7 @@
 // sparse arrays. The array structure to use is given as template argument.
 
 #ifndef Array_h
-#define Array_h
+#define Array_h 
 
 #include "ArrayStorage.h"
 #include "RegularArray.cpp"
