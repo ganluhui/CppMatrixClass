@@ -76,12 +76,16 @@
   <ItemGroup>
     <ClCompile Include="ArrayStorage.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="MatrixStorage.cpp" />
     <ClCompile Include="RegularArray.cpp" />
+    <ClCompile Include="RegularMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayStorage.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="MatrixStorage.h" />
     <ClInclude Include="RegularArray.h" />
+    <ClInclude Include="RegularMatrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

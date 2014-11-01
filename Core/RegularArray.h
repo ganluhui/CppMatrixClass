@@ -1,7 +1,7 @@
 // Template class for a non-sparse arrays.
 
-#ifndef RegularArray_hpp
-#define RegularArray_hpp
+#ifndef RegularArray_h
+#define RegularArray_h
 
 // Use the STL vector class
 #include <vector>

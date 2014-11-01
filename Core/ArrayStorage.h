@@ -5,8 +5,8 @@
 // dervived classes. These derived classes must implement the indexing [] operator.
 //
 
-#ifndef ArrayStorage_hpp
-#define ArrayStorage_hpp
+#ifndef ArrayStorage_h
+#define ArrayStorage_h
 
 using namespace std;
 
