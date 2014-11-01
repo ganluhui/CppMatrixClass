@@ -3,7 +3,7 @@
 // for different matrix structures like normal matrices and sparse matrices.
 // The matrix structure to use is given as template argument.
 
-#ifndef Matrix_h
+#ifndef Matrix_h 
 #define Matrix_h
 
 #include "RegularMatrix.cpp"
