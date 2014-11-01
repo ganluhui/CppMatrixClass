@@ -1,4 +1,4 @@
-// Matrix class. It uses an actual storage for matrix.
+// Matrix class. It is used as an actual storage for matrix.
 // This class acts like a kind of adapter class since it defines a common interface
 // for different matrix structures like normal matrices and sparse matrices.
 // The matrix structure to use is given as template argument.
@@ -46,7 +46,7 @@ public:
 	Matrix<V, I, S>& operator = (const Matrix<V, I, S>& source);
 };
 
-#endif	// Matrix_h
+#endif
 
 
 
