@@ -5,8 +5,7 @@
 
 // Use the STL vector class
 #include <vector>
-#include "ArrayStorage.cpp"
-
+#include "ArrayStorage.h"
 
 template <class V, class TA = std::allocator<V> >
 class RegularArray : public ArrayStorage<V>

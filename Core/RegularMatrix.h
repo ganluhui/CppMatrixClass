@@ -32,8 +32,8 @@ public:
 	// Modifiers
 
 	// Operators
-	virtual ArrayStructure<TValue>& operator[] (size_t index);					// Subscripting operator
-	virtual const ArrayStructure<TValue>& operator[] (size_t index) const;		// Subscripting operator
+	virtual ArrayStorage<TValue> & operator[] (size_t index);					// Subscripting operator
+	virtual const ArrayStorage<TValue> & operator[] (size_t index) const;		// Subscripting operator
 
 	RegularMatrix<TValue, TA>& operator = (const RegularMatrix<TValue, TA>& source);
 };

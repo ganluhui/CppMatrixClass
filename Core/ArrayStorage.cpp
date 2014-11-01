@@ -4,27 +4,10 @@
 // A size_t is used for indexing. Indexing starts at 0.
 //
 
-#ifndef ArrayStorage_cpp
-#define ArrayStorage_cpp
+#ifndef __ArrayStorage_cpp__
+#define __ArrayStorage_cpp__
 
 #include "ArrayStorage.h"
-
-
-// Constructors & destructor
-template <class V>
-ArrayStorage<V>::ArrayStorage()
-{ // Default constructor
-}
-
-template <class V>
-ArrayStorage<V>::ArrayStorage(const ArrayStorage<V>& source)
-{ // Copy constructor
-}
-
-template <class V>
-ArrayStorage<V>::~ArrayStorage()
-{ // Destructor
-}
 
 // Selectors
 template <class V>

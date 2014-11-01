@@ -74,18 +74,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArrayStorage.cpp" />
-    <ClCompile Include="Matrix.cpp" />
-    <ClCompile Include="MatrixStorage.cpp" />
-    <ClCompile Include="RegularArray.cpp" />
-    <ClCompile Include="RegularMatrix.cpp" />
+    <ClInclude Include="StorageArray.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrayStorage.h" />
-    <ClInclude Include="Matrix.h" />
-    <ClInclude Include="MatrixStorage.h" />
-    <ClInclude Include="RegularArray.h" />
-    <ClInclude Include="RegularMatrix.h" />
+    <ClCompile Include="StorageArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
