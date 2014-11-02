@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <iostream>
 
+
 template<class T>
 class BandedArray{
 private:
