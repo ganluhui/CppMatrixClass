@@ -1,17 +1,18 @@
-// ArrayStorage.cpp
+// AbstractArray.cpp
 //
 // Base class for Array storage structure.
 // A size_t is used for indexing. Indexing starts at 0.
 //
 
-#ifndef __ArrayStorage_cpp__
-#define __ArrayStorage_cpp__
+/*
+#ifndef __AbstractArray_cpp__
+#define __AbstractArray_cpp__
 
-#include "ArrayStorage.h"
+#include "AbstractArray.h"
 
 // Selectors
 template <class V>
-const V& ArrayStorage<V>::Element(size_t index) const
+const V& AbstractArray<V>::Element(size_t index) const
 { // Get element at position
 
 	// Use the subscript operator in derived classes
@@ -20,7 +21,7 @@ const V& ArrayStorage<V>::Element(size_t index) const
 }
 
 template <class V>
-size_t ArrayStorage<V>::MinIndex() const
+size_t AbstractArray<V>::MinIndex() const
 { // Return the minimum index
 
 	// Always ONE
@@ -28,7 +29,7 @@ size_t ArrayStorage<V>::MinIndex() const
 }
 
 template <class V>
-size_t ArrayStorage<V>::MaxIndex() const
+size_t AbstractArray<V>::MaxIndex() const
 { // Return the maximum index
 
 
@@ -37,7 +38,7 @@ size_t ArrayStorage<V>::MaxIndex() const
 
 // Modifiers
 template <class V>
-void ArrayStorage<V>::Element(size_t index, const V& val)
+void AbstractArray<V>::Element(size_t index, const V& val)
 { // Change element at position
 
 	// Use the subscript operator in derived classes
@@ -45,10 +46,11 @@ void ArrayStorage<V>::Element(size_t index, const V& val)
 }
 
 template <class V>
-ArrayStorage<V>& ArrayStorage<V>::operator = (const ArrayStorage<V>& source)
+AbstractArray<V>& AbstractArray<V>::operator = (const AbstractArray<V>& source)
 { // Assignment operator
 
 	return *this;
 }
 
 #endif
+*/

@@ -1,31 +1,32 @@
 // Base class for matrix storage structure.
 // A size_t is used for indexing. Indexing starts at 1.
 
-#ifndef MatrixStorage_cpp
-#define MatrixStorage_cpp
+/*
+#ifndef AbstractMatrix_cpp
+#define AbstractMatrix_cpp
 
-#include "MatrixStorage.h"
+#include "AbstractMatrix.h"
 
 
 // Constructors & destructor
 template <class V>
-MatrixStorage<V>::MatrixStorage()
+AbstractMatrix<V>::AbstractMatrix()
 { // Default constructor
 }
 
 template <class V>
-MatrixStorage<V>::MatrixStorage(const MatrixStorage<V>& source)
+AbstractMatrix<V>::AbstractMatrix(const AbstractMatrix<V>& source)
 { // Copy constructor
 }
 
 template <class V>
-MatrixStorage<V>::~MatrixStorage()
+AbstractMatrix<V>::~AbstractMatrix()
 { // Destructor
 }
 
 // Selectors
 template <class V>
-const V& MatrixStorage<V>::Element(size_t row, size_t column) const
+const V& AbstractMatrix<V>::Element(size_t row, size_t column) const
 { // Get element at position
 
 	// Use the subscripting operator of derived class
@@ -33,7 +34,7 @@ const V& MatrixStorage<V>::Element(size_t row, size_t column) const
 }
 
 template <class V>
-size_t MatrixStorage<V>::MinRowIndex() const
+size_t AbstractMatrix<V>::MinRowIndex() const
 { // Return the minimum row index
 
 	// Always ONE
@@ -41,7 +42,7 @@ size_t MatrixStorage<V>::MinRowIndex() const
 }
 
 template <class V>
-size_t MatrixStorage<V>::MaxRowIndex() const
+size_t AbstractMatrix<V>::MaxRowIndex() const
 { // Return the maximum row index
 
 	// Always row size . use the Rows() function of derived classes
@@ -49,7 +50,7 @@ size_t MatrixStorage<V>::MaxRowIndex() const
 }
 
 template <class V>
-size_t MatrixStorage<V>::MinColumnIndex() const
+size_t AbstractMatrix<V>::MinColumnIndex() const
 { // Return the minimum column index
 
 	// Always ONE
@@ -57,7 +58,7 @@ size_t MatrixStorage<V>::MinColumnIndex() const
 }
 
 template <class V>
-size_t MatrixStorage<V>::MaxColumnIndex() const
+size_t AbstractMatrix<V>::MaxColumnIndex() const
 { // Return the maximum column index
 
 	// Always column size. use the Columns() function of derived classes
@@ -66,7 +67,7 @@ size_t MatrixStorage<V>::MaxColumnIndex() const
 
 // Modifiers
 template <class V>
-void MatrixStorage<V>::Element(size_t row, size_t column, const V& val)
+void AbstractMatrix<V>::Element(size_t row, size_t column, const V& val)
 { // Change element at position
 
 
@@ -76,14 +77,14 @@ void MatrixStorage<V>::Element(size_t row, size_t column, const V& val)
 
 // Operators
 template <class V>
-MatrixStorage<V>& MatrixStorage<V>::operator = (const MatrixStorage<V>& source)
+AbstractMatrix<V>& AbstractMatrix<V>::operator = (const AbstractMatrix<V>& source)
 { // Assignment operator
 
 	return *this;
 }
 
 template <class V>
-V& MatrixStorage<V>::operator () (size_t row, size_t column)
+V& AbstractMatrix<V>::operator () (size_t row, size_t column)
 { // Get element at position
 
 
@@ -92,7 +93,7 @@ V& MatrixStorage<V>::operator () (size_t row, size_t column)
 }
 
 template <class V>
-const V& MatrixStorage<V>::operator () (size_t row, size_t column) const
+const V& AbstractMatrix<V>::operator () (size_t row, size_t column) const
 { // Get element at position
 
 
@@ -101,3 +102,4 @@ const V& MatrixStorage<V>::operator () (size_t row, size_t column) const
 }
 
 #endif
+*/

@@ -1,35 +1,94 @@
-// Template class for a non-sparse arrays.
-
 #ifndef RegularArray_h
 #define RegularArray_h
 
-// Use the STL vector class
-#include <vector>
-#include "ArrayStorage.h"
-
-template <class V, class TA = std::allocator<V> >
-class RegularArray : public ArrayStorage<V>
-{
+#include "Array.h"
+template <class T, class TA = std::allocator<T>>
+class RegularArray : public Array<T> {
 private:
-	std::vector<V, TA> m_vector;								// Use STL vector class for storage
-
+	size_t nrow;
+	size_t ncol;
+	std::vector<T, TA> m_Array;
 public:
-	// Constructors & destructor
+	// constructor, destructor
 	RegularArray();
-	RegularArray(size_t size);
-	RegularArray(const RegularArray<V, TA>& source);
+	RegularArray(size_t, size_t);
+	RegularArray(T, size_t, size_t);
+	RegularArray(const RegularArray<T, TA>&);
 	virtual ~RegularArray();
 
-	// Selectors
-	virtual size_t Size() const;
+	// selector
+	virtual const size_t RowSize() const;
+	virtual const size_t ColSize() const;
 
-	// Modifiers
+	// modifier
+	virtual void Change(T, size_t, size_t);
 
-	// Operators
-	V& operator[] (size_t index);
-	const V& operator[] (size_t index) const;
+	// operators
+	virtual T& operator() (std::size_t, std::size_t);
 
-	RegularArray<V, TA>& operator = (const RegularArray<V, TA>& source);
+};
+
+template<class T, class TA>
+RegularArray<T, TA>::RegularArray()
+{
+	nrow = 1;
+	ncol = 1;
+	m_Array = vector<T, TA>(1);
+};
+
+template<class T, class TA>
+RegularArray<T, TA>::RegularArray(size_t nr, size_t nc)
+{
+	nrow = nr;
+	ncol = nc;
+	size_t size = nr*nc;
+	m_Array = std::vector<T, TA>(size);
+};
+
+template<class T, class TA>
+RegularArray<T, TA>::RegularArray(T val, size_t nr, size_t nc)
+{
+	nrow = nr;
+	ncol = nc;
+	size_t size = nr*nc;
+	(*this).m_Array.assign(size, val);
+};
+
+template <class T, class TA>
+RegularArray<T, TA>::RegularArray(const RegularArray<T, TA>& source)
+{   
+	nrow = source.nrow;
+	ncol = source.ncol;
+	m_Array = source.m_Array;
+};
+
+template <class T, class TA>
+RegularArray<T, TA>::~RegularArray()
+{
+};
+
+template <class T, class TA>
+const size_t RegularArray<T, TA>::RowSize() const
+{
+	return (*this).nrow;
+};
+
+template <class T, class TA>
+const size_t RegularArray<T, TA>::ColSize() const
+{
+	return (*this).ncol;
+};
+
+template <class T, class TA>
+void RegularArray<T, TA>::Change(T val, size_t nr, size_t nc)
+{
+	m_Array[(nr - 1)*ncol + nc] = val;
+};
+
+template <class T, class TA>
+T& RegularArray<T, TA>::operator() (size_t nr, size_t nc)
+{
+	return m_Array[(nr-1)*ncol + nc-1];
 };
 
 

@@ -3,6 +3,7 @@
 // for different matrix structures like normal matrices and sparse matrices.
 // The matrix structure to use is given as template argument.
 
+/*
 #ifndef Matrix_cpp
 #define Matrix_cpp
 
@@ -146,3 +147,4 @@ Matrix<V, I, S>& Matrix<V, I, S>::operator = (const Matrix<V, I, S>& source)
 }
 
 #endif
+*/
