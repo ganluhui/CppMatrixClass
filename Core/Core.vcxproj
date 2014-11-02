@@ -76,11 +76,17 @@
   <ItemGroup>
     <ClInclude Include="Array.h" />
     <ClInclude Include="BandedArray.h" />
+    <ClInclude Include="BandedMatrix.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="RegularArray.h" />
+    <ClInclude Include="RegularMatrix.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BandedMatrix.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="RegularMatrix.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
