@@ -17,7 +17,7 @@ public:
 	virtual const std::size_t Size() const = 0;
 
 	//modifier
-	virtual void Change(const T, std::size_t, std::size_t) = 0;
+	virtual void Change(T, std::size_t, std::size_t) = 0;
 
 	//operator
 	virtual T& operator() (std::size_t,std::size_t) = 0;
