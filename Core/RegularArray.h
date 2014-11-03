@@ -27,7 +27,7 @@ public:
 	virtual T& operator() (std::size_t, std::size_t);
 
 	// print
-	void print(const RegularArray<T, TA>&);
+	void print();
 
 };
 
@@ -95,14 +95,14 @@ T& RegularArray<T, TA>::operator() (size_t nr, size_t nc)
 };
 
 template <class T, class TA>
-void RegularArray<T, TA>::print(const RegularArray<T, TA>& m){
-	std::cout << "\n\nRow Size:" << m.RowSize() << std::endl;
-	std::cout << "Column Size: " << m.ColSize() << std::endl;
+void RegularArray<T, TA>::print(){
+	std::cout << "\n\nRow Size:" << (*this).RowSize() << std::endl;
+	std::cout << "Column Size: " << (*this).ColSize() << std::endl;
 	std::cout << "\nArray: [";
-	for (size_t row_index = 1; row_index <= m.RowSize(); row_index++){
+	for (size_t row_index = 1; row_index <= (*this).RowSize(); row_index++){
 		std::cout << "\nRow" << row_index << "(";
-		for (size_t col_index = 1; col_index <= m.ColSize(); col_index++){
-			std::cout << m(row_index, col_index) << " , ";
+		for (size_t col_index = 1; col_index <= (*this).ColSize(); col_index++){
+			std::cout << (*this)(row_index, col_index) << " , ";
 
 		}
 		std::cout << ")";
