@@ -11,10 +11,10 @@
 #include <vector>
 #include <cstdlib>
 #include <iostream>
-
+#include "Array.h"
 
 template<class T>
-class BandedArray{
+class BandedArray: public Array<T>{
 private:
 	size_t dimension;
 	size_t upper;
@@ -26,12 +26,12 @@ public:
 	//BandedArray<T>(size_t, size_t, size_t);
 
 	// selector
-	T operator() (size_t, size_t);
+	T& operator() (size_t, size_t);
 
 	// change element
 	void Change(T, size_t, size_t);
 
-	// prsize_t
+	// print
 	void Print();
 
 	// size
