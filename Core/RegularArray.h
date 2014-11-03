@@ -4,7 +4,7 @@
 #include "Array.h"
 template <class T, class TA = std::allocator<T>>
 class RegularArray : public Array<T> {
-private:
+protected:
 	size_t nrow;
 	size_t ncol;
 	std::vector<T, TA> m_Array;
