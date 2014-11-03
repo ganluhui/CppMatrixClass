@@ -2,25 +2,62 @@
 #define Matrix_h
 
 #include <memory>
-#include "Array.h"
 #include <cstdlib>
+#include "Array.h"
 
 class Matrix{
 protected:
-	//Array<double>* data;
 	std::shared_ptr<Array<double>> data;
 public:
-	// constructor
-	//Matrix(double, size_t, size_t);
+	virtual Matrix& operator+ (Matrix&);
+	virtual Matrix& operator- (Matrix&);
+	virtual Matrix& operator* (Matrix&);
+	virtual Matrix& Transpose();
+	//virtual Matrix& GetRow();
+	//virtual Matrix& GetColumn();
+}
 
-	// operator
-	//virtual Matrix& operator+ (Matrix&);
-	//virtual Matrix& operator- (Matrix&);
-	//virtual Matrix& operator* (Matrix&);
-	//// other functions
-	//virtual Matrix& transpose();
-	//virtual Matrix& getrow();
-	//virtual Matrix& getcolumn();
-};
+Matrix& Matrix::operator+ (Matrix& param){
+	Matrix temp;
+	for (size_t row_index = 1; row_index <= (*data).RowSize(); row_index++){
+		for (size_t col_index = 1; col_index <= (*data).ColSize(); col_index++){
+			(*(temp.data))(row_index, col_index) = (*data)(row_index, col_index) + (*(param.data))(row_index, col_index);
+		}
+	}
+	return temp;
+}
+
+Matrix& Matrix::operator- (Matrix& param){
+	Matrix temp;
+	for (size_t row_index = 1; row_index <= (*data).RowSize(); row_index++){
+		for (size_t col_index = 1; col_index <= (*data).ColSize(); col_index++){
+			(*(temp.data))(row_index, col_index) = (*data)(row_index, col_index) - (*(param.data))(row_index, col_index);
+		}
+	}
+	return temp;
+}
+
+Matrix& Matrix::operator* (Matrix& param){
+	Matrix temp;
+	for (size_t row_index = 1; row_index <= (*data).RowSize(); row_index++){
+		for (size_t col_index = 1; col_index <= (*data).ColSize(); col_index++){
+			for (size_t inner = 1; inner <= (*data).RowSize(); inner++) {
+				(*(temp.data))(row_index, col_index) += (*data)(row_index, inner) * (*(param.data))(inner, col_index);
+			}
+		}
+	}
+	return temp;
+}
+
+Matrix& Matrix::Transpose(){
+	Matrix temp;
+	for (size_t row_index = 1; row_index <= (*data).RowSize(); row_index++){
+		for (size_t col_index = 1; col_index <= (*data).ColSize(); col_index++){
+			(*(temp.data))(col_index, row_index) = (*data)(row_index, col_index);
+		}
+	}
+	return temp;
+}
+
 
 #endif
