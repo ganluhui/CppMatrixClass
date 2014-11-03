@@ -5,15 +5,15 @@
 #include "Array.h"
 
 class Matrix{
-private:
+protected:
 	std::shared_ptr<Array<double>> data;
 public:
-	//virtual Matrix& operator+ (Matrix&);
-	//virtual Matrix& operator- (Matrix&);
-	//virtual Matrix& operator* (Matrix&);
-	//virtual Matrix& Transpose();
-	//virtual Matrix& GetRow();
-	//virtual Matrix& GetColumn();
+	virtual Matrix& operator+ (Matrix&);
+	virtual Matrix& operator- (Matrix&);
+	virtual Matrix& operator* (Matrix&);
+	virtual Matrix& transpose();
+	virtual Matrix& getrow();
+	virtual Matrix& getcolumn();
 };
 
 #endif
