@@ -4,7 +4,7 @@
 #include "Array.h"
 template <class T, class TA = std::allocator<T>>
 class RegularArray : public Array<T> {
-private:
+protected:
 	size_t nrow;
 	size_t ncol;
 	std::vector<T, TA> m_Array;
@@ -27,7 +27,7 @@ public:
 	virtual T& operator() (std::size_t, std::size_t);
 
 	// print
-	void print(const RegularArray<T, TA>&);
+	void print();
 
 };
 
@@ -59,7 +59,7 @@ RegularArray<T, TA>::RegularArray(T val, size_t nr, size_t nc)
 
 template <class T, class TA>
 RegularArray<T, TA>::RegularArray(const RegularArray<T, TA>& source)
-{   
+{
 	nrow = source.nrow;
 	ncol = source.ncol;
 	m_Array = source.m_Array;
@@ -91,18 +91,18 @@ void RegularArray<T, TA>::Change(T val, size_t nr, size_t nc)
 template <class T, class TA>
 T& RegularArray<T, TA>::operator() (size_t nr, size_t nc)
 {
-	return m_Array[(nr-1)*ncol + nc-1];
+	return m_Array[(nr - 1)*ncol + nc - 1];
 };
 
 template <class T, class TA>
-void RegularArray<T, TA>::print(const RegularArray<T, TA>& m){
-	std::cout << "\n\nRow Size:" << m.RowSize() << std::endl;
-	std::cout << "Column Size: " << m.ColSize() << std::endl;
+void RegularArray<T, TA>::print(){
+	std::cout << "\n\nRow Size:" << (*this).RowSize() << std::endl;
+	std::cout << "Column Size: " << (*this).ColSize() << std::endl;
 	std::cout << "\nArray: [";
-	for (size_t row_index = 1; row_index <= m.RowSize(); row_index++){
+	for (size_t row_index = 1; row_index <= (*this).RowSize(); row_index++){
 		std::cout << "\nRow" << row_index << "(";
-		for (size_t col_index = 1; col_index <= m.ColSize(); col_index++){
-			std::cout << m(row_index, col_index) << " , ";
+		for (size_t col_index = 1; col_index <= (*this).ColSize(); col_index++){
+			std::cout << (*this)(row_index, col_index) << " , ";
 
 		}
 		std::cout << ")";
