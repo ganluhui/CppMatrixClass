@@ -15,7 +15,7 @@ public:
 	virtual Matrix& Transpose();
 	//virtual Matrix& GetRow();
 	//virtual Matrix& GetColumn();
-};
+}
 
 Matrix& Matrix::operator+ (Matrix& param){
 	Matrix temp;
