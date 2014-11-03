@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Array.h"
+#include "Matrix.h"
 #include "RegularArray.h"
 #include "RegularMatrix.h"
 #include "Utility.h"
