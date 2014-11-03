@@ -3,17 +3,24 @@
 
 #include <memory>
 #include "Array.h"
+#include <cstdlib>
 
 class Matrix{
-private:
+protected:
+	//Array<double>* data;
 	std::shared_ptr<Array<double>> data;
 public:
+	// constructor
+	//Matrix(double, size_t, size_t);
+
+	// operator
 	//virtual Matrix& operator+ (Matrix&);
 	//virtual Matrix& operator- (Matrix&);
 	//virtual Matrix& operator* (Matrix&);
-	//virtual Matrix& Transpose();
-	//virtual Matrix& GetRow();
-	//virtual Matrix& GetColumn();
+	//// other functions
+	//virtual Matrix& transpose();
+	//virtual Matrix& getrow();
+	//virtual Matrix& getcolumn();
 };
 
 #endif
