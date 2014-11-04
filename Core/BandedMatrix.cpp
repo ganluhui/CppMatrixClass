@@ -14,7 +14,7 @@ BandedMatrix::BandedMatrix(double value, size_t dim, size_t up, size_t low){
 
 BandedMatrix::BandedMatrix(size_t dim, size_t up, size_t low) : BandedMatrix(1.0, dim, up, low){};
 
-Matrix BandedMatrix::operator+ (Matrix& source){
+Matrix& BandedMatrix::operator+ (Matrix& source){
 	if (typeid(source).name() == typeid(BandedMatrix).name()){
 		std::cout << "Input is a BandedMatrix";
 		BandedMatrix temp = dynamic_cast<BandedMatrix&> (source);

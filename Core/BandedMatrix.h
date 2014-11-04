@@ -9,10 +9,11 @@ public:
 	BandedMatrix(size_t, size_t, size_t); // default value is 1
 
 	// override operator "+" in the base class Matrix
-	virtual Matrix operator+ (Matrix&); // override "+" in base class Matrix
+	virtual Matrix& operator+ (Matrix&); // override "+" in base class Matrix
 
 	// override GetRow(size_t) in the base class Matrix
 	virtual Matrix& GetRow(size_t);
+	virtual Matrix& GetColumn(size_t);
 
 	// return upper and lower in its data (BandedArray)
 	size_t Upper();
