@@ -154,3 +154,6 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+Core/test1.cpp
+Core/test1.cpp
+Test/Test.cpp
