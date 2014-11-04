@@ -24,7 +24,7 @@ public:
 	virtual void Change(T, size_t, size_t);
 
 	// operators
-	virtual T& operator() (std::size_t, std::size_t);
+	virtual T operator() (std::size_t, std::size_t);
 
 	// Print
 	virtual void Print();
@@ -89,7 +89,7 @@ void RegularArray<T, TA>::Change(T val, size_t nr, size_t nc)
 };
 
 template <class T, class TA>
-T& RegularArray<T, TA>::operator() (size_t nr, size_t nc)
+T RegularArray<T, TA>::operator() (size_t nr, size_t nc)
 {
 	return m_Array[(nr-1)*ncol + nc-1];
 };

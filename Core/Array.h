@@ -21,7 +21,7 @@ public:
 	virtual void Change(T, std::size_t, std::size_t) = 0;
 
 	//operator
-	virtual T& operator() (std::size_t,std::size_t) = 0;
+	virtual T operator() (std::size_t,std::size_t) = 0;
 
 	// Print
 	virtual void Print() = 0;
