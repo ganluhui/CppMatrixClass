@@ -1,15 +1,17 @@
+#include <iostream>
 #include <cstdlib>
 #include "Array.h"
 #include "RegularArray.h"
-#include "Utility.h"
+#include "Matrix.h"
 
 int main(){
 
-	RegularArray<double> arr1(5,5);
-	RegularArray<double> arr2(5,5,10);
+	Matrix arr1(1,5,5);
+	Matrix arr2(5,5,5);
+	Matrix arr3 = arr2 + arr1;
 
-	print(arr1);
-	print(arr2);
+	//Print(arr1);
+	//Print(arr2);
 	
 	return 0;
 }

@@ -23,6 +23,9 @@ public:
 	//operator
 	virtual T& operator() (std::size_t,std::size_t) = 0;
 
+	// Print
+	virtual void Print() = 0;
+
 };
 
 #endif

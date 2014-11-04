@@ -14,7 +14,7 @@ public:
 	RegularArray(size_t, size_t);
 	RegularArray(T, size_t, size_t);
 	RegularArray(const RegularArray<T, TA>&);
-	virtual ~RegularArray();
+	~RegularArray();
 
 	// selector
 	virtual const size_t RowSize() const;
@@ -26,8 +26,8 @@ public:
 	// operators
 	virtual T& operator() (std::size_t, std::size_t);
 
-	// print
-	void print();
+	// Print
+	virtual void Print();
 
 };
 
@@ -85,7 +85,7 @@ const size_t RegularArray<T, TA>::ColSize() const
 template <class T, class TA>
 void RegularArray<T, TA>::Change(T val, size_t nr, size_t nc)
 {
-	m_Array[(nr - 1)*ncol + nc] = val;
+	m_Array[(nr - 1)*ncol + nc-1] = val;
 };
 
 template <class T, class TA>
@@ -95,7 +95,7 @@ T& RegularArray<T, TA>::operator() (size_t nr, size_t nc)
 };
 
 template <class T, class TA>
-void RegularArray<T, TA>::print(){
+void RegularArray<T, TA>::Print(){
 	std::cout << "\n\nRow Size:" << (*this).RowSize() << std::endl;
 	std::cout << "Column Size: " << (*this).ColSize() << std::endl;
 	std::cout << "\nArray: [";
