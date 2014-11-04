@@ -25,18 +25,22 @@ public:
 	BandedArray<T>(T, size_t, size_t, size_t);
 	//BandedArray<T>(size_t, size_t, size_t);
 
-	// selector
+	// override selector
 	T operator() (size_t, size_t);
 
-	// change element
+	// override change element
 	void Change(T, size_t, size_t);
 
-	// print
+	// override base fucntion to print
 	void Print();
 
-	// size
+	// override base function for row size and column size
 	const size_t RowSize() const;
 	const size_t ColSize() const;
+
+	// return upper and lower
+	size_t Upper();
+	size_t Lower();
 };
 
 template<class T>
@@ -84,6 +88,16 @@ const size_t BandedArray<T>::RowSize() const{
 template<class T>
 const size_t BandedArray<T>::ColSize() const{
 	return dimension;
+}
+
+template<class T>
+size_t BandedArray<T>::Upper() {
+	return upper;
+}
+
+template<class T>
+size_t BandedArray<T>::Lower() {
+	return lower;
 }
 
 #endif
