@@ -25,6 +25,8 @@ public:
 	virtual Matrix& GetColumn(size_t);
 	virtual double operator() (size_t, size_t);
 	virtual void Change(double, size_t, size_t);
+	virtual const size_t RowSize() const;
+	virtual const size_t ColSize() const;
 
 	virtual void Print();
 };
