@@ -11,6 +11,9 @@ public:
 	// override operator "+" in the base class Matrix
 	virtual Matrix operator+ (Matrix&); // override "+" in base class Matrix
 
+	// override GetRow(size_t) in the base class Matrix
+	virtual Matrix& GetRow(size_t);
+
 	// return upper and lower in its data (BandedArray)
 	size_t Upper();
 	size_t Lower();
