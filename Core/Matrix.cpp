@@ -96,3 +96,11 @@ void Matrix::Print(){
 void Matrix::Change(double value, size_t row, size_t col){
 	data->Change(value, row, col);
 }
+
+const size_t Matrix::RowSize() const{
+	data->RowSize();
+}
+
+const size_t Matrix::ColSize() const{
+	data->ColSize();
+}
