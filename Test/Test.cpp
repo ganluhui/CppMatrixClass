@@ -1,24 +1,19 @@
-//#include <iostream>
-//#include <cstdlib>
-//#include "Matrix.h"
-//#include "BandedMatrix.h"
-//#include "BandedArray.h"
-//
-//int main(){
-//	Matrix arr1(1, 5, 5);
-//	//Matrix arr2(5, 5, 5);
-//	//Matrix arr3 = arr2 + arr1;
-//	//arr3.Print();
-//	//BandedMatrix arr4(1.0, 4, 1, 1);
-//	//arr4.Print();
-//	//arr4.Change(2.0, 1, 1);
-//	//arr4.Print();
-//	//BandedMatrix arr5(2.0, 4, 1, 1);
-//	//Matrix arr6 = arr4 + arr5;
-//	//Matrix arr7 = arr4 + arr3;
-//	//BandedMatrix arr8(4, 1, 1);
-//	//Matrix arr9 = arr5 + arr8;
-//	//arr8.Print();
-//
-//	return 0;
-//}
+#include <iostream>
+#include <cstdlib>
+#include "Matrix.h"
+#include "BandedMatrix.h"
+#include "BandedArray.h"
+
+int main(){
+	//BandedMatrix arr1(1, 5, 1, 1);
+	//std::cout << arr1(5, 3);
+	//BandedMatrix arr2(2, 5, 0, 0);
+	
+	Matrix arr3(1.0, 5, 5);
+	Matrix arr4(2.0, 5, 5);
+	Matrix arr5 = arr3 + arr4;
+	//arr1 + arr2;
+	//delete arr3;
+
+	return 0;
+}
