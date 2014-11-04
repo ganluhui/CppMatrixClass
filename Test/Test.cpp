@@ -13,10 +13,11 @@ int main(){
 	//arr4.Print();
 	//arr4.Change(2.0, 1, 1);
 	//arr4.Print();
-	//BandedMatrix arr5(2.0, 4, 1, 1);
+	BandedMatrix arr5(2.0, 4, 1, 1);
 	//Matrix arr6 = arr4 + arr5;
 	//Matrix arr7 = arr4 + arr3;
-	//BandedMatrix arr8(4, 1, 1);
+	BandedMatrix arr8(4, 1, 1);
+	Matrix arr9 = arr5 + arr8;
 	//arr8.Print();
 
 	return 0;
