@@ -23,6 +23,7 @@ public:
 	virtual Matrix& Transpose();
 	virtual Matrix& GetRow(size_t);
 	virtual Matrix& GetColumn(size_t);
+	virtual double operator() (size_t, size_t);
 	virtual void Change(double, size_t, size_t);
 
 	virtual void Print();

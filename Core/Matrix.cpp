@@ -84,6 +84,11 @@ Matrix& Matrix::GetColumn(size_t col){
 	return temp;
 }
 
+double Matrix::operator() (size_t nr, size_t nc){
+	return data->operator()(nr,nc);
+
+}
+
 void Matrix::Print(){
 	data->Print();
 }
