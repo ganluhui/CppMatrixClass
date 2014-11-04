@@ -26,7 +26,7 @@ public:
 	//BandedArray<T>(size_t, size_t, size_t);
 
 	// selector
-	T& operator() (size_t, size_t);
+	T operator() (size_t, size_t);
 
 	// change element
 	void Change(T, size_t, size_t);
@@ -35,8 +35,8 @@ public:
 	void Print();
 
 	// size
-	size_t RowSize();
-	size_t ColumnSize();
+	const size_t RowSize() const;
+	const size_t ColSize() const;
 };
 
 template<class T>
@@ -77,12 +77,12 @@ void BandedArray<T>::Print(){
 }
 
 template<class T>
-size_t BandedArray<T>::RowSize(){
+const size_t BandedArray<T>::RowSize() const{
 	return dimension;
 }
 
 template<class T>
-size_t BandedArray<T>::ColumnSize(){
+const size_t BandedArray<T>::ColSize() const{
 	return dimension;
 }
 
