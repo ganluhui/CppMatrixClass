@@ -112,6 +112,7 @@ double Matrix::operator() (size_t nr, size_t nc){
 }
 
 void Matrix::Print(){
+	cout << typeid(*this).name() << endl;
 	data->Print();
 }
 

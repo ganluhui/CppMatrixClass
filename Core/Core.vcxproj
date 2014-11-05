@@ -86,7 +86,6 @@
     <ClCompile Include="BandedMatrix.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="RegularMatrix.cpp" />
-    <ClCompile Include="test1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
