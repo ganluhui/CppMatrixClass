@@ -13,7 +13,7 @@ Matrix::Matrix(size_t nrow, size_t ncol) : data(new RegularArray<double>(nrow, n
 
 Matrix::Matrix() : data(nullptr) {};
 
-Matrix::~Matrix(){ std::cout << "\n\ndestructor of Matrix is called" << std::endl; }
+Matrix::~Matrix(){}
 
 shared_ptr<Matrix> Matrix::operator+ (Matrix& param){
 	//Matrix temp(param.RowSize(), param.ColSize());
