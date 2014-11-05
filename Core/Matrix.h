@@ -17,9 +17,9 @@ public:
 	Matrix();
 	~Matrix();
 	
-	virtual Matrix operator+ (Matrix&);
-	virtual Matrix operator- (Matrix&);
-	virtual Matrix operator* (Matrix&);
+	Matrix operator+ (Matrix&);
+	Matrix operator- (Matrix&);
+	Matrix operator* (Matrix&);
 	virtual Matrix Transpose();
 	virtual Matrix GetRow(size_t);
 	virtual Matrix GetColumn(size_t);
