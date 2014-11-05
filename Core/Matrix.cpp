@@ -115,9 +115,17 @@ void Matrix::Change(double value, size_t row, size_t col){
 }
 
 const size_t Matrix::RowSize() const{
+<<<<<<< HEAD
+	data->RowSize();
+}
+
+const size_t Matrix::ColSize() const{
+	data->ColSize();
+=======
 	return data->RowSize();
 }
 
 const size_t Matrix::ColSize() const{
 	return data->ColSize();
+>>>>>>> origin/tianyi2
 }
