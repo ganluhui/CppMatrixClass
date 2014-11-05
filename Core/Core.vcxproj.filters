@@ -24,16 +24,10 @@
     <ClInclude Include="RegularArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BandedArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Matrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RegularMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BandedMatrix.h">
@@ -42,9 +36,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RegularMatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BandedMatrix.cpp">
