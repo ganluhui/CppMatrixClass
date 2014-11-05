@@ -15,7 +15,7 @@ Matrix::~Matrix(){ std::cout << "\n\ndestructor of Matrix is called" << std::end
 
 Matrix Matrix::operator+ (Matrix& param){
 	Matrix temp(param.RowSize(), param.ColSize());
-	if (param.RowSize() == (*this).RowSize() && param.ColSize() == (*this).ColSize){
+	if (param.RowSize() == (*this).RowSize() && param.ColSize() == (*this).ColSize()){
 		for (size_t row_index = 1; row_index <= (*this).RowSize(); row_index++){
 			for (size_t col_index = 1; col_index <= (*this).ColSize(); col_index++){
 				temp.Change((*this)(row_index, col_index) + param(row_index, col_index), row_index, col_index);
@@ -33,7 +33,7 @@ Matrix Matrix::operator+ (Matrix& param){
 
 Matrix Matrix::operator- (Matrix& param){
 	Matrix temp(param.RowSize(), param.ColSize());
-	if (param.RowSize() == (*this).RowSize() && param.ColSize() == (*this).ColSize){
+	if (param.RowSize() == (*this).RowSize() && param.ColSize() == (*this).ColSize()){
 		for (size_t row_index = 1; row_index <= (*this).RowSize(); row_index++){
 			for (size_t col_index = 1; col_index <= (*this).ColSize(); col_index++){
 				temp.Change((*this)(row_index, col_index) - param(row_index, col_index), row_index, col_index);
