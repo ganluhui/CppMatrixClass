@@ -1,6 +1,5 @@
 //
 //  BandedArray.h
-//  BandMatrix
 //
 //  Created by Luhui Gan on 2014-11-01.
 //  Copyright (c) 2014 Luhui Gan. All rights reserved.
@@ -72,10 +71,15 @@ void BandedArray<T>::Change(T value, size_t i, size_t j){
 
 template<class T>
 void BandedArray<T>::Print(){
+	std::cout << "Row Size:" << this->RowSize() << std::endl;
+	std::cout << "Column Size:" << this->ColSize() << std::endl;
 	for (size_t i = 1; i <= dimension; i++){
+		std::cout << "Row" << i << " (";
 		for (size_t j = 1; j <= dimension; j++){
-			std::cout << this->operator() (i, j) << " ";
+			std::cout << this->operator() (i, j);
+			if (j < dimension) std::cout << ", ";
 		}
+		std::cout << ")";
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;

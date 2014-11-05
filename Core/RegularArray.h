@@ -98,19 +98,19 @@ T RegularArray<T, TA>::operator() (size_t nr, size_t nc)
 
 template <class T, class TA>
 void RegularArray<T, TA>::Print(){
-	std::cout << "\n\nRow Size:" << (*this).RowSize() << std::endl;
+	std::cout << "Row Size:" << (*this).RowSize() << std::endl;
 	std::cout << "Column Size: " << (*this).ColSize() << std::endl;
-	std::cout << "\nArray: [";
 	for (size_t row_index = 1; row_index <= (*this).RowSize(); row_index++){
-		std::cout << "\nRow" << row_index << "(";
+		std::cout << "Row" << row_index << "(";
 		for (size_t col_index = 1; col_index <= (*this).ColSize(); col_index++){
-			std::cout << (*this)(row_index, col_index) << " , ";
-
+			std::cout << (*this)(row_index, col_index);
+			if (col_index < this->ColSize()) std::cout << ", ";
 		}
 		std::cout << ")";
+		std::cout << std::endl;
 
 	}
-	std::cout << "]" << std::endl;
+	std::cout << std::endl;
 };
 
 #endif
