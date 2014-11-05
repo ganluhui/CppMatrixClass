@@ -9,10 +9,8 @@ public:
 	BandedMatrix(size_t, size_t, size_t); // default value is 1
 
 	// override operator "+" in the base class Matrix
-	BandedMatrix operator+ (BandedMatrix&); //
-	Matrix operator+ (Matrix&);
-	BandedMatrix operator- (BandedMatrix&);
-	Matrix operator- (Matrix&);
+	shared_ptr<Matrix> operator+ (Matrix&);
+	//shared_ptr<Matrix> operator- (Matrix&);
 
 	// override GetRow(size_t) in the base class Matrix
 	//virtual Matrix& GetRow(size_t);
