@@ -23,7 +23,6 @@ private:
 public:
 	// constructor & destructor
 	BandedArray<T>(T, size_t, size_t, size_t);
-	//BandedArray<T>(size_t, size_t, size_t);
 
 	// override selector
 	T operator() (size_t, size_t);
