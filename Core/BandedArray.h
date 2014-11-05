@@ -78,6 +78,7 @@ void BandedArray<T>::Print(){
 		}
 		std::cout << std::endl;
 	}
+	std::cout << std::endl;
 }
 
 template<class T>
