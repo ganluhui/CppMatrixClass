@@ -14,28 +14,29 @@ BandedMatrix::BandedMatrix(double value, size_t dim, size_t up, size_t low){
 
 BandedMatrix::BandedMatrix(size_t dim, size_t up, size_t low) : BandedMatrix(1.0, dim, up, low){};
 
-Matrix& BandedMatrix::operator+ (Matrix& source){
-	if (typeid(source).name() == typeid(BandedMatrix).name()){
-		std::cout << "Input is a BandedMatrix";
-		BandedMatrix temp = dynamic_cast<BandedMatrix&> (source);
+shared_ptr<Matrix> BandedMatrix::operator+ (Matrix& rhs){
+	if (typeid(rhs).name() == typeid(BandedMatrix).name()){
+		cout << "BandedMatrix + BandedMatrix is called." << endl;
+		BandedMatrix rhs1 = dynamic_cast<BandedMatrix&> (rhs);
+		int dim = data->RowSize();
+		int up = max(this->Upper(), rhs1.Upper());
+		int low = max(this->Lower(), rhs1.Lower());
+		shared_ptr<BandedMatrix> lhs(new BandedMatrix(0.0, dim, up, low));
 		
-		size_t dimension = temp.data->RowSize();
-		size_t upper = max(temp.Upper(), this->Upper());
-		size_t lower = max(temp.Lower(), this->Lower());
-		
-		/*BandedMatrix lhs(dimension, upper, lower);
-		for (int i = 1; i <= dimension; i++){
-			for (int j = 1; j <= upper + lower + 1; j++){
-				size_t j_mat = i - lower + j;
-				if (j_mat > 0 && j_mat <= dimension) lhs.Change()
+		int j_mat;
+		for (int i = 1; i <= dim; i++){
+			for (int j = 1; j <= up + low + 1; j++){
+				j_mat = i - low + j - 1;
+					if (j_mat > 0 && j_mat <= dim)
+						lhs->Change(rhs1(i, j_mat) + this->operator()(i, j_mat), i, j_mat);
+				}
 			}
-		}*/
-
+		return lhs;
 	}
-	else 
-		std::cout << "Input is not a BandedMatrix" << std::endl;
-	
-	return(this->Matrix::operator+ (source));
+	else{
+		cout << "BandedMatrix + Matrix is called, passed to base class." << endl;
+		return this->Matrix::operator+ (rhs);
+	}
 }
 
 size_t BandedMatrix::Upper() { 
