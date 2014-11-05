@@ -1,11 +1,11 @@
 CppMatrixClass
-==============
+
 
 BSIFG C++ Project: Matrix Class 
 
 BSFIG Training Group C++ Project
 Team Member: Luhui, Tianyi, Pengfei, Le Yan
-===========================================
+
 1. Introduction
 1.1. The purpose of our project is to create a cpp class to perform computations for matrix with numeric elements. Matrix computation is closely related to financial engineering applications.
 
@@ -14,7 +14,7 @@ Team Member: Luhui, Tianyi, Pengfei, Le Yan
 1.3. The matrix operations considered in our project are +, -, *, transpose.
 
 1.4. We use class template, polymorphism and smart pointer features to achieve mantainance/expansion needs. The methods of matrices class are implemented via polymorphism of array classes. The matrix operators are called for specific matrix shape via polymorphism of both matrix and array classes. It is easy to reuse our codes to add new matrix types and matrix operations.
-=========================================================================
+
 2. Delievered Codes:
 
 -- Header Files:
@@ -24,7 +24,7 @@ Array.h, RegualrArray.h, BandedArray.h, Matrix.h, BandedMatrix.h
 -- CPP Files:
 
 Matrix.h, BandedMatrix.h
-========================
+
 3. Design:
 
 3.1. "Array" is an abstract class template which provides following interfaces (pure virtual functions):
