@@ -1,3 +1,5 @@
+// Specific array class: regular shaped array
+// Derived from abstract class Array
 #ifndef RegularArray_h
 #define RegularArray_h
 
@@ -12,7 +14,7 @@ public:
 	// constructor, destructor
 	RegularArray();
 	RegularArray(size_t, size_t);
-	RegularArray(T, size_t, size_t);
+	RegularArray(T, size_t, size_t); 
 	RegularArray(const RegularArray<T, TA>&);
 	~RegularArray();
 
@@ -108,7 +110,7 @@ void RegularArray<T, TA>::Print(){
 		std::cout << ")";
 
 	}
-	std::cout << "]";
+	std::cout << "]" << std::endl;
 };
 
 #endif
