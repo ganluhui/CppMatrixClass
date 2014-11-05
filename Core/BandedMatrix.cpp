@@ -14,28 +14,56 @@ BandedMatrix::BandedMatrix(double value, size_t dim, size_t up, size_t low){
 
 BandedMatrix::BandedMatrix(size_t dim, size_t up, size_t low) : BandedMatrix(1.0, dim, up, low){};
 
-Matrix& BandedMatrix::operator+ (Matrix& source){
-	if (typeid(source).name() == typeid(BandedMatrix).name()){
-		std::cout << "Input is a BandedMatrix";
-		BandedMatrix temp = dynamic_cast<BandedMatrix&> (source);
-		
-		size_t dimension = temp.data->RowSize();
-		size_t upper = max(temp.Upper(), this->Upper());
-		size_t lower = max(temp.Lower(), this->Lower());
-		
-		/*BandedMatrix lhs(dimension, upper, lower);
-		for (int i = 1; i <= dimension; i++){
-			for (int j = 1; j <= upper + lower + 1; j++){
-				size_t j_mat = i - lower + j;
-				if (j_mat > 0 && j_mat <= dimension) lhs.Change()
-			}
-		}*/
+BandedMatrix BandedMatrix::operator+ (BandedMatrix& source){
+	cout << "BandedMatrix + BandedMatrix is called." << endl;
+	BandedMatrix temp = dynamic_cast<BandedMatrix&> (source);
 
+	int dimension = temp.RowSize();
+	int upper = max(temp.Upper(), this->Upper());
+	int lower = max(temp.Lower(), this->Lower());
+
+	BandedMatrix lhs(dimension, upper, lower);
+
+	int j_mat;
+	for (int i = 1; i <= dimension; i++){
+		for (int j = 1; j <= upper + lower + 1; j++){
+			j_mat = i - lower + j;
+			if (j_mat > 0 && j_mat <= dimension)
+				lhs.Change(temp(i, j_mat) + this->operator()(i, j_mat), i, j_mat);
+		}
 	}
-	else 
-		std::cout << "Input is not a BandedMatrix" << std::endl;
-	
-	return(this->Matrix::operator+ (source));
+	return lhs;
+}
+
+Matrix BandedMatrix::operator+ (Matrix& rhs){
+	cout << "BandedMatrix + Matrix is called" << endl;
+	return this->Matrix::operator+ (rhs);
+}
+
+BandedMatrix BandedMatrix::operator- (BandedMatrix& source){
+	cout << "BandedMatrix - BandedMatrix is called." << endl;
+	BandedMatrix temp = dynamic_cast<BandedMatrix&> (source);
+
+	int dimension = temp.RowSize();
+	int upper = max(temp.Upper(), this->Upper());
+	int lower = max(temp.Lower(), this->Lower());
+
+	BandedMatrix lhs(dimension, upper, lower);
+
+	int j_mat;
+	for (int i = 1; i <= dimension; i++){
+		for (int j = 1; j <= upper + lower + 1; j++){
+			j_mat = i - lower + j;
+			if (j_mat > 0 && j_mat <= dimension)
+				lhs.Change(temp(i, j_mat) - this->operator()(i, j_mat), i, j_mat);
+		}
+	}
+	return lhs;
+}
+
+Matrix BandedMatrix::operator- (Matrix& rhs){
+	cout << "BandedMatrix - Matrix is called" << endl;
+	return this->Matrix::operator- (rhs);
 }
 
 size_t BandedMatrix::Upper() { 
