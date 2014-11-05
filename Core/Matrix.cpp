@@ -16,7 +16,6 @@ Matrix::Matrix() : data(nullptr) {};
 Matrix::~Matrix(){}
 
 shared_ptr<Matrix> Matrix::operator+ (Matrix& param){
-	//Matrix temp(param.RowSize(), param.ColSize());
 	shared_ptr<Matrix> temp(new Matrix(param.RowSize(), param.ColSize()));
 	if (param.RowSize() == (*this).RowSize() && param.ColSize() == (*this).ColSize()){
 		for (size_t row_index = 1; row_index <= (*this).RowSize(); row_index++){
@@ -55,7 +54,6 @@ shared_ptr<Matrix> Matrix::operator- (Matrix& param){
 }
 
 shared_ptr<Matrix> Matrix::operator* (Matrix& param){
-	//Matrix temp((*this).RowSize(), param.ColSize());
 	shared_ptr<Matrix> temp(new Matrix(this->RowSize(), param.ColSize()));
 	if ((*this).ColSize() == param.RowSize()){
 		for (size_t row_index = 1; row_index <= (*this).RowSize(); row_index++){
@@ -78,11 +76,10 @@ shared_ptr<Matrix> Matrix::operator* (Matrix& param){
 }
 
 shared_ptr<Matrix> Matrix::Transpose(){
-	//Matrix temp(data->ColSize(), data->RowSize());
-	shared_ptr<Matrix> temp(new Matrix(this->ColSize(), this->RowSize()));
-	for (size_t row_index = 1; row_index <= (data->RowSize()); row_index++){
-		for (size_t col_index = 1; col_index <= (data->ColSize()); col_index++){
-			temp->Change((*data)(row_index, col_index), col_index, row_index);
+	shared_ptr<Matrix> temp(new Matrix((*this).ColSize(), (*this).RowSize()));
+	for (size_t row_index = 1; row_index <= ((*this).RowSize()); row_index++){
+		for (size_t col_index = 1; col_index <= ((*this).ColSize()); col_index++){
+			temp->Change((*this)(row_index, col_index), col_index, row_index);
 		}
 	}
 	cout << "Matrix transpose is called." << endl;
@@ -90,10 +87,9 @@ shared_ptr<Matrix> Matrix::Transpose(){
 }
 
 shared_ptr<Matrix> Matrix::GetRow(size_t row){
-	//Matrix temp(1, data->ColSize());
-	shared_ptr<Matrix> temp(new Matrix(1, this->ColSize()));
-	for (size_t col_index = 1; col_index <= (data->ColSize()); col_index++){
-		temp->Change((*data)(row, col_index), 1, col_index);
+	shared_ptr<Matrix> temp(new Matrix(1, (*this).ColSize()));
+	for (size_t col_index = 1; col_index <= ((*this).ColSize()); col_index++){
+		temp->Change((*this)(row, col_index), 1, col_index);
 
 	}
 	cout << "Matrix row returned." << endl;
@@ -101,10 +97,9 @@ shared_ptr<Matrix> Matrix::GetRow(size_t row){
 }
 
 shared_ptr<Matrix> Matrix::GetColumn(size_t col){
-	//Matrix temp(data->RowSize(), 1);
-	shared_ptr<Matrix> temp(new Matrix(this->RowSize(), 1));
-	for (size_t row_index = 1; row_index <= (data->RowSize()); row_index++){
-		temp->Change((*data)(row_index, col), row_index, 1);
+	shared_ptr<Matrix> temp(new Matrix((*this).RowSize(), 1));
+	for (size_t row_index = 1; row_index <= ((*this).RowSize()); row_index++){
+		temp->Change((*this)(row_index, col), row_index, 1);
 
 	}
 	cout << "Matrix column returned." << endl;
